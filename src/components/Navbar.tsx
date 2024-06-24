@@ -2,6 +2,10 @@ import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
 const Navbar = async () => {
   const user = undefined;
@@ -56,7 +60,7 @@ const Navbar = async () => {
             ) : (
               <>
                 <Link
-                  href='/api/auth/'
+                  href='/api/auth/register'
                   className={buttonVariants({
                     size: "lg",
                     variant: "ghost",

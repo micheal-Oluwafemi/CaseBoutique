@@ -1,17 +1,12 @@
 import { cn } from "@/lib/utils";
 import { HTMLAttributes, ImgHTMLAttributes, ReactNode } from "react";
 
-interface imageProps {
-  imgSrc: ImgHTMLAttributes<HTMLImageElement>;
-}
-
 interface PhoneProps extends HTMLAttributes<HTMLDivElement> {
   dark?: boolean;
-  imgSrc: imageProps;
+  imgSrc: string;
 }
 
 const Phone = ({ imgSrc, className, dark = false, ...props }: PhoneProps) => {
-  console.log(imgSrc);
   return (
     <div
       className={cn(
@@ -33,7 +28,7 @@ const Phone = ({ imgSrc, className, dark = false, ...props }: PhoneProps) => {
       <div className='absolute -z-10 inset-0'>
         <img
           className='object-cover min-w-full min-h-full'
-          src={`${imgSrc}`}
+          src={imgSrc}
           alt='overlaying phone image'
         />
       </div>
